@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
 function Index() {
-  return <>HomePage</>;
+  return <>HomePage</>
 }
-export default Index;
+export default Index
