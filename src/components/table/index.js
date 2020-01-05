@@ -39,7 +39,6 @@ const columns = [
 
 const Table = props => {
   const { isLoading, data } = props
-  console.log('isLoading : ', isLoading)
   return <AntdTable loading={isLoading} columns={columns} dataSource={data} />
 }
 

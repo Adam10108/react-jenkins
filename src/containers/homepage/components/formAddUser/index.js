@@ -1,5 +1,6 @@
 // @flow
 import { Form, Row, Col, Input } from 'antd'
+import * as R from 'ramda'
 import React from 'react'
 
 import { addUsers } from '../../../../core/models/users'
@@ -53,7 +54,9 @@ const FormAddUser = props => {
     props.form.validateFields(async (err, values) => {
       if (!err) {
         const userData = {
-          ...values
+          email: R.path(['email'], values).toLowerCase(),
+          name: R.path(['name'], values).toLowerCase(),
+          phoneNumber: R.path(['phoneNumber'], values).toLowerCase()
         }
 
         try {
@@ -113,7 +116,7 @@ const FormAddUser = props => {
               <StyledText required>*</StyledText>
             </Row>
             <Form.Item>
-              {getFieldDecorator('phone', {
+              {getFieldDecorator('phoneNumber', {
                 rules: [
                   {
                     required: true,
