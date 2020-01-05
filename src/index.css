@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ant-table-thead > tr > th {
+  font-size: 16px;
+  color: white;
+  text-align: left;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #d670a4,
+    #da75a2,
+    #de7aa2,
+    #e27fa1,
+    #e288b8,
+    #dd94cf,
+    #d5a0e4,
+    #aabbff,
+    #6ed5ff,
+    #3cebff,
+    #5ffbf1
+  );
+  border-bottom: none;
+}
+
+.ant-pagination-item-active a {
+  color: white;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #d670a4,
+    #da75a2,
+    #de7aa2,
+    #e27fa1,
+    #e288b8,
+    #dd94cf,
+    #d5a0e4,
+    #aabbff,
+    #6ed5ff,
+    #3cebff,
+    #5ffbf1
+  );
+}
+
+.ant-input {
+  font-size: 16px;
+  color: black;
+  border-radius: 2px;
+
+  border-color: white;
+  background-color: white;
+}
