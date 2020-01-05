@@ -33,6 +33,7 @@ const ImgStyled = styled.img`
 const TextBoxStyled = styled.div`
   display: flex;
   align-items: center;
+  justify-content: ${props => (props.rigth ? 'flex-end' : '')};
 `
 const TitleStyled = styled.span`
   margin: 25px;
@@ -45,14 +46,14 @@ const PageLayout = props => {
   return (
     <BackgruondLayout>
       <Header height="130px" width="100%" padding="20px 8.33%">
-        <Col span={21}>
+        <Col lg={19}>
           <TextBoxStyled>
             <ImgStyled src={UserIcon} />
             <TitleStyled>Test ReactJs With Jenkins.</TitleStyled>
           </TextBoxStyled>
         </Col>
-        <Col span={3}>
-          <TextBoxStyled>
+        <Col lg={5}>
+          <TextBoxStyled rigth>
             <TitleStyled>IT4-RA</TitleStyled>
           </TextBoxStyled>
         </Col>
