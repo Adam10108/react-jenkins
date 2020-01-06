@@ -1,5 +1,5 @@
 import { Table as AntdTable } from 'antd'
-
+import * as R from 'ramda'
 import React from 'react'
 import styled from '@emotion/styled'
 
@@ -8,6 +8,21 @@ const StyledText = styled.div`
   font-weight: bold;
   opacity: 0.7;
   color: 'red';
+`
+const StyledScroll = styled.div`
+  height: ${props => (props.height ? props.height : '')};
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: white;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: white;
+  }
 `
 
 const columns = [
@@ -38,8 +53,12 @@ const columns = [
 ]
 
 const Table = props => {
-  const { isLoading, data } = props
-  return <AntdTable loading={isLoading} columns={columns} dataSource={data} />
+  const { isLoading, data, scroll } = props
+  return (
+    <StyledScroll height={R.path(['y'], scroll)} width={R.path(['x'], scroll)}>
+      <AntdTable loading={isLoading} columns={columns} dataSource={data} />
+    </StyledScroll>
+  )
 }
 
 export default Table

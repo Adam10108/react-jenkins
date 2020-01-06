@@ -31,6 +31,7 @@ function Index() {
             <Table
               isLoading={R.path(['isLoading'], resp)}
               data={R.path(['data'], resp)}
+              scroll={{ x: false, y: `${window.innerHeight - 500}px` }}
             />
           </Col>
         </Row>
