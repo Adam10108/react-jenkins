@@ -1,14 +1,24 @@
 pipeline {
     agent {
         docker {
-            image 'node:10.13.0' 
+            image 'node:10.14.0' 
             args '-p 3000:3000' 
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-                sh 'npm install' 
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
