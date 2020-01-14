@@ -25,6 +25,7 @@ function useQuery(model) {
 
   useEffect(() => {
     fetchData()
+    // eslint-disable-next-line to the line before.
   }, [isRefetch])
 
   const result = { data, isLoading, setIsLoading, reloadData }
